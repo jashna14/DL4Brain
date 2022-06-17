@@ -73,3 +73,4 @@ def rank_accuracy(actual, predicted, distance):
     
     return(1 - ((rank_sum-1)/(len(actual)-1)))
 
+## pearson corr, RSA etc
