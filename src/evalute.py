@@ -7,9 +7,9 @@ def pairwise_accuracy(actual, predicted, distance):
 	""" To compute the Pairwise accuracy
 
 	Args:
-		actual: Numpy array of shape (num_samples x D)
-		predicted: Numpy array of shape (num_samples x D)
-		distance: String - 'pearson'/'cosine' - to calculate distance between actual and predicted sample
+		actual: Numpy array of shape (num_samples x D) - Actual Targets
+		predicted: Numpy array of shape (num_samples x D) - Predicted Targets
+		distance: String - to calculate distance between actual and predicted sample - can be one of the following 'pearson'/'cosine'
 
 	Return:
 		float: The Pairwise accuracy
@@ -42,9 +42,9 @@ def rank_accuracy(actual, predicted, distance):
 	""" To compute the Rank accuracy
 
 	Args:
-		actual: Numpy array of shape (num_samples x D)
-		predicted: Numpy array of shape (num_samples x D)
-		distance: String - 'pearson'/'cosine' - to calculate distance between actual and predicted sample
+		actual: Numpy array of shape (num_samples x D) - Actual Targets
+		predicted: Numpy array of shape (num_samples x D) - Predicted Targets
+		distance: String - to calculate distance between actual and predicted sample - can be one of the following 'pearson'/'cosine'
 
 	Return:
 		float: The Rank accuracy
@@ -72,3 +72,4 @@ def rank_accuracy(actual, predicted, distance):
     rank_sum = rank_sum/(len(actual))
     
     return(1 - ((rank_sum-1)/(len(actual)-1)))
+
