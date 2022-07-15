@@ -25,6 +25,46 @@ def R2r(Pred,Real):
     R2rs[ind_neg] *= - 1
     return R2rs
 
+def SVM(X,y):
+	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)   
+
+	# prepare the cross-validation procedure
+	cv = KFold(n_splits = 10, random_state = 0, shuffle = True)
+
+	# Initializing the SVM model
+	model_svm = SVC(decision_function_shape = 'ovo', random_state = 0, kernel='linear')
+	# model_svm.fit(X_train, y_train)
+
+	# evaluate model
+	scores = cross_val_score(model_svm, X_test, y_test, scoring = 'accuracy', cv = cv, n_jobs = -1)    
+	y_pred = cross_val_predict(model_svm, X_test, y_test, cv = cv)
+	report = classification_report(y_test, y_pred)
+
+	print(report)
+	print(scores)
+	print('mean accuracy:%.4f' % np.mean(scores))
+
+def construct_confusion_matrix(y_test, y_pred)
+	cm_svm = confusion_matrix(y_test, y_pred)
+	model_conf_matrix = cm_svm.astype('float') / cm_svm.sum(axis = 1)[:, np.newaxis]
+
+	visualization.conf_matrix(model_conf_matrix, 
+                          categories, 
+                          title='Results')
+class MLP():
+	# number of unique conditions that we have
+	mlp_classifier = Sequential()
+
+	# Adding the input layer and the first hidden layer
+	mlp_classifier.add(Dense(338 , input_dim = 675, kernel_initializer="uniform", activation = 'relu'))
+
+	# Adding the second hidden layer
+	mlp_classifier.add(Dense(169, kernel_initializer="uniform", activation = 'relu'))
+
+	# Using softmax at the end, lenght of categories shows the number of labels we have
+	mlp_classifier.add(Dense(len(categories), activation = 'softmax'))
+
+
 def ridge(X,Y,lmbda):
     return np.dot(inv(X.T.dot(X)+lmbda*np.eye(X.shape[1])),X.T.dot(Y))
 
@@ -82,7 +122,7 @@ def kernel_ridge_svd(X,Y,lmbda):
     U, s, Vt = svd(X.T, full_matrices=False)
     d = s / (s** 2 + lmbda)
     return np.dot(np.dot(U,np.diag(d).dot(Vt)),Y)
-    
+
 
 def kernel_ridge_by_lambda_svd(X, Y, Xval, Yval, lambdas=np.array([0.1,1,10,100,1000])):
     error = np.zeros((lambdas.shape[0],Y.shape[1]))
