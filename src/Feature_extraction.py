@@ -69,6 +69,56 @@ def read_data(video_name, transform,video_utils):
 
     return nd.array(clip_input)
 
+
+
+def extract_text_features(tr_time,transcript_path):
+    tr_words = []
+    f = open(transcript_path,'r')
+    lines = f.readlines()
+    cur_time = tr_time
+    words = []
+
+    for line in lines:
+        line = line.strip()
+        if(line == ""):
+            continue
+        else:
+            line = line.split(':')
+            time = float(line[0])
+            word = re.sub(r'[^a-zA-Z ]+'," ",line[1])
+            word = word.strip()
+            if word == "":
+                continue
+            else:
+                if time <= cur_time:
+                    words.extend(word.split(' '))
+                else:
+                    tr_words.append(words)
+                    cur_time += tr_time
+                    words = []
+                    while(time > cur_time):
+                        tr_words.append([])
+                        cur_time += tr_time
+                    words.extend(word.split(' '))
+
+    if(tr_words[-1] != words):
+        tr_words.append(words)
+
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    model = BertModel.from_pretrained('bert-base-uncased')
+
+    text_feats = []
+    for words in tr_words:
+        if len(words) == 0:
+            text_feats.append(np.array([]))
+            continue
+        input_ids = torch.tensor(tokenizer.encode(words)).unsqueeze(0)
+        outputs = model(input_ids)
+        cls = outputs[0][0][0]
+        text_feats.append(np.array(cls.tolist()))
+
+    return text_feats
+
 def extract_audio_features():
     y,sr = librosa.load("./audio.mp3")
     y = librosa.to_mono(y)
@@ -150,7 +200,7 @@ def extract_video_features():
     return video_feat.asnumpy()
 
 
-def extract_stimuli_features(video_path,tr_time):
+def extract_stimuli_features(video_path,tr_time,transcript_path):
     
     clip = VideoFileClip(video_path)
     clip.duration
@@ -178,5 +228,7 @@ def extract_stimuli_features(video_path,tr_time):
         video_features = extract_video_features()
         video_feats.append(video_features[0])
         audio_feats.append(extract_audio_features())
-
-    return np.array(video_feats),np.array(audio_feats)
+    
+    text_feats = extract_text_features(tr_time,transcript_path)
+    
+    return np.array(video_feats),np.array(audio_feats),np.array(text_feats)
