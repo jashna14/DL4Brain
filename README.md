@@ -14,6 +14,6 @@ https://drive.google.com/file/d/1HMXzy4NTAie21NoEy6EAOa9qyIvdAcTL/view?usp=shari
 
 https://colab.research.google.com/drive/10aKI0NcSqWbwxOgvBrcv6xk-LXhKNM2u?usp=sharing
 
-## Colab Link for hands-on session #2 (Brain Encoding)
+## Colab Link for hands-on session #3 (Brain Decoding)
 
 https://colab.research.google.com/drive/1JX6m9zLVOYUZv-tVaZO7KqsTR55VwDn4?usp=sharing
