@@ -2,7 +2,7 @@
 from functools import reduce
 import numpy as np
 import logging
-from utils import mult_diag, counter
+from DL4Brain.src.utils import mult_diag, counter
 import random
 import itertools as itools
 
