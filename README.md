@@ -26,4 +26,11 @@ https://github.com/jashna14/DL4Brain/tree/master/slides
 
 https://github.com/subbareddy248/Awesome-Brain-Encoding--Decoding
 
+## For Citation of our work
 
+@inproceedings{dl4brain,
+  title={{T}utorial: {D}eep {L}earning for {B}rain {E}ncoding and {D}ecoding},
+  author={Oota, Subba Reddy and Arora, Jashn and Gupta, Manish and Bapi, Raju S. and Toneva, Mariya},
+  booktitle={The $44^{th}$ Annual Meeting of the Cognitive Science Society (CogSci)},
+  year={2022}
+}
