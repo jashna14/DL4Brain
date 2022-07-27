@@ -17,3 +17,13 @@ https://colab.research.google.com/drive/10aKI0NcSqWbwxOgvBrcv6xk-LXhKNM2u?usp=sh
 ## Colab Link for hands-on session #3 (Brain Decoding)
 
 https://colab.research.google.com/drive/1JX6m9zLVOYUZv-tVaZO7KqsTR55VwDn4?usp=sharing
+
+## Slides
+
+https://github.com/jashna14/DL4Brain/tree/master/slides
+
+## Awesome-Brain-Encoding--Decoding
+
+https://github.com/subbareddy248/Awesome-Brain-Encoding--Decoding
+
+
