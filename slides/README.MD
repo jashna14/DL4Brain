@@ -1,4 +1,4 @@
-* [Stimulus Representations](https://docs.google.com/presentation/d/1GjiaGOh5FeV8qOeJivIsumYJeRHYjeXp/edit?usp=sharing&ouid=100565237099472127436&rtpof=true&sd=true)
+* [Stimulus Representations](https://docs.google.com/presentation/d/1bTYYnMUnyN0TPem0WNHY2vxMmAAlmr4T/edit?usp=sharing&ouid=100565237099472127436&rtpof=true&sd=true&sd=true)
 
 * [Brain Encoding](https://docs.google.com/presentation/d/19T-Axjcjwcj9AEEALXAqCjyAUo5nSAeE0-LGRavbhyQ/edit?usp=sharing)
 
