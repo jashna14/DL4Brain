@@ -4,11 +4,11 @@ This is the official repository for the tutorial titled "Deep Learning for Brain
 
 ## Colab Link for hands-on session #1 (Feature Extraction)
 ### Text Feature extraction 
-1. GloVe and Word2Vec - https://drive.google.com/file/d/1S1AaleerjVZNntbithmQ7VpQEXp-qixV/view?usp=sharing
-2. BERT - https://drive.google.com/file/d/1ORMURggThy4C0bXmpUV7oHD8jdIJhGol/view?usp=sharing
+1. GloVe and Word2Vec - https://drive.google.com/file/d/14b9X5Q2Bo2gdTQA_PlqdtqNH-Tvf2gL9/view?usp=share_link
+2. BERT - https://drive.google.com/file/d/1w1a08G9zNVNANtiEZNCdMAi5M3eO_yew/view?usp=share_link
 
 ### Visual Feature extraction 
-https://drive.google.com/file/d/1HMXzy4NTAie21NoEy6EAOa9qyIvdAcTL/view?usp=sharing
+https://drive.google.com/file/d/1bKg2VtagnAl9xe4ciZJ1n7hbKvPXNI-0/view?usp=share_link
 
 ## Colab Link for hands-on session #2 (Brain Encoding)
 
